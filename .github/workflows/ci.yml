@@ -1,0 +1,44 @@
+name: Neovim Config CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  lint:
+    name: Lint Lua files
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Luacheck linter
+        uses: lunarmodules/luacheck@v1
+
+  test:
+    name: Test Neovim Config
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install dependencies and Neovim using Makefile
+        run: make install
+
+      - name: Setup Neovim Config
+        run: make setup
+
+      - name: Sync and update plugins
+        run: make update
+
+      - name: Ensure Neovim config loads correctly
+        run: make reload
+
+      - name: Run Neovim health check
+        run: make check
+
+      - name: Verify Neovim starts without errors
+        run: nvim --headless -c 'q' || exit 1
+
