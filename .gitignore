@@ -1,0 +1,24 @@
+🚀 Neovim cache and plugin-related files
+/.local/share/nvim/
+/.local/state/nvim/
+/.cache/nvim/
+
+# 🚀 Swap files and backup files
+*.swp
+*.swo
+*.swn
+swap/
+backup/
+undo/
+
+# 🚀 Plugin manager-related files
+/lazy-lock.json
+/packer_compiled.lua
+
+# 🚀 LSP and DAP temporary files
+/.lspinstall/
+/.nvim_dap/
+
+# 🚀 OS and editor-specific files
+.DS_Store
+Thumbs.db#
