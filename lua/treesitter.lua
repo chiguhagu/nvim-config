@@ -1,7 +1,11 @@
 -- treesitter.lua
 
 require("nvim-treesitter.configs").setup({
-    ensure_installed = { "lua" }, -- Adjust as needed
+    ensure_installed = {
+        "lua",
+        "terraform",
+        "hcl",
+    },
     highlight = { enable = true },
     indent = { enable = true },
 })

@@ -20,3 +20,7 @@ lspconfig.lua_ls.setup({
     },
 })
 
+lspconfig.terraformls.setup({
+    settings = {},
+})
+

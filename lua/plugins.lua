@@ -30,7 +30,10 @@ require("lazy").setup({
         dependencies = { "neovim/nvim-lspconfig" },
         config = function()
             require("mason-lspconfig").setup({
-                ensure_installed = { "lua_ls" },    -- Automatically install specified LSP servers
+                ensure_installed = {
+                    "lua_ls",
+                    "terraformls",
+                },
             })
         end,
     },
@@ -73,5 +76,7 @@ require("lazy").setup({
     {
         "nvim-tree/nvim-web-devicons",
     },
+
+    -- 
 })
 
