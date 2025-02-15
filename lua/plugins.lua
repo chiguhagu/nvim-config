@@ -34,5 +34,44 @@ require("lazy").setup({
             })
         end,
     },
+
+    -- Browse the file system and other tree like structures
+    {
+        "nvim-neo-tree/neo-tree.nvim",
+        branch = "v3.x",
+        opts = {
+            filesystem = {
+                follow_current_file = { enabled = true },
+                hijack_netrw_befavior = "open_current",
+                use_libuv_file_watcher = true,
+                filtered_items = {
+                    visible = false,
+                    show_hidden_count = true,
+                    hide_dotfiles = false,
+                    hide_gitignored = false,
+                    never_show = {
+                        ".git",
+                        ".DS_Store",
+                        ".history",
+                    },
+                },
+            },
+        },
+    },
+
+    -- UI Components Library for NeoVim
+    {
+        "MunifTanjim/nui.nvim",
+    },
+
+    -- All the lua functions I don't want to write twice
+    {
+        "nvim-lua/plenary.nvim",
+    },
+
+    -- Provides Nerd Font icons (glyphs) for use by Neovim plugins
+    {
+        "nvim-tree/nvim-web-devicons",
+    },
 })
 
